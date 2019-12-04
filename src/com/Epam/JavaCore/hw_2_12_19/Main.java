@@ -1,4 +1,4 @@
-package com.company;
+package com.Epam.JavaCore.hw_2_12_19;
 
 import java.io.IOException;
 
