@@ -1,6 +1,4 @@
-package com.Epam.JavaCore.hw_2_12_19;
-
-import java.io.IOException;
+package com.Epam.JavaCore.hw_1_2_12_19;
 
 public class Main {
 
@@ -14,7 +12,8 @@ public class Main {
                 String equation = a + "x^2 + " + b + "x + " + c + " = 0 ";
                 double disc = Math.pow(b, 2) - 4 * a * c;
                 if (disc == 0) {
-                    double x = -b / 2 * a;
+                    double x;
+                    x = -b / 2 * a;
                     System.out.println("Корень уравнения " + equation + " - " + x);
                 } else if (disc > 0) {
                     double x1 = (-b + Math.sqrt(disc)) / (2 * a);
