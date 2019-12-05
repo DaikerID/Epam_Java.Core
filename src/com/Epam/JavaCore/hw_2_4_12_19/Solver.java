@@ -26,11 +26,11 @@ public class Solver {
     private static void calculateTwoRoots(QuadraticEquation quadraticEquation, double discriminant) {
         double x1 = (-quadraticEquation.getB() + Math.sqrt(discriminant)) / (2 * quadraticEquation.getA());
         double x2 = (-quadraticEquation.getB() - Math.sqrt(discriminant)) / (2 * quadraticEquation.getA());
-        System.out.print("The roots of equation " + quadraticEquation + ":\n1)" + x1 + "\n2)" + x2);
+        System.out.print("The roots of equation " + quadraticEquation + ":\n1) " + x1 + "\n2) " + x2);
     }
 
     private static void calculateSingleRoot(QuadraticEquation quadraticEquation) {
         double x = -quadraticEquation.getB() / 2 * quadraticEquation.getA();
-        System.out.println("Single root of equation " + quadraticEquation + " - " + x);
+        System.out.println("Single root of equation " + quadraticEquation + ";\nx = " + x);
     }
 }

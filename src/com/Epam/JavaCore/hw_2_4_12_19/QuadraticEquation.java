@@ -18,7 +18,7 @@ public class QuadraticEquation {
 
     @Override
     public String toString() {
-        return this.a + "x^2 + " + this.b + "x + " + this.c + " = 0 ";
+        return this.a + "x^2 + " + this.b + "x + " + this.c + " = 0";
     }
 
     public double getA() {
