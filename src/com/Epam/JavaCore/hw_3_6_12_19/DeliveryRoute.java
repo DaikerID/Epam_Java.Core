@@ -17,7 +17,7 @@ public class DeliveryRoute {
     public Float calculateCost() {
         Float cost = 0f;
         for (Transportation transportation : transportationRoute) {
-            cost += transportation.getCostOfKilometer() * cargo.getWeight();
+            cost += transportation.getCostOfKg() * cargo.getWeight();
         }
         return cost;
     }

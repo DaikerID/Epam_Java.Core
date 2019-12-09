@@ -34,7 +34,7 @@ public class Transportation {
         return vehicle;
     }
 
-    public Float getCostOfKilometer() {
+    public Float getCostOfKg() {
         return vehicle.getMarginRate() * route.getDistance();
     }
 }
