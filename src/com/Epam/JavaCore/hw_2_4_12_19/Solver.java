@@ -1,6 +1,9 @@
 package com.Epam.JavaCore.hw_2_4_12_19;
 
 public class Solver {
+
+    private Solver(){}
+
     public static void solve(QuadraticEquation quadraticEquation) {
         if (quadraticEquation.getA() != 0) {
             double discriminant = calculateDiscriminant(quadraticEquation);
