@@ -16,23 +16,11 @@ public class Cargo {
         return route;
     }
 
-    public void setRoute(Route route) {
-        this.route = route;
-    }
-
     public Float getWeight() {
         return weight;
     }
 
-    public void setWeight(Float weight) {
-        this.weight = weight;
-    }
-
     public Float getVolume() {
         return volume;
-    }
-
-    public void setVolume(Float volume) {
-        this.volume = volume;
     }
 }
