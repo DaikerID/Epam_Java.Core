@@ -1,6 +1,4 @@
-package com.Epam.JavaCore.hw_3_6_12_19;
-
-import org.jetbrains.annotations.NotNull;
+package com.Epam.JavaCore.hw3_6_12_19;
 
 public class Transportation {
     private Route route;

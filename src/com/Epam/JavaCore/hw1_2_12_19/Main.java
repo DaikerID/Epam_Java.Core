@@ -1,4 +1,4 @@
-package com.Epam.JavaCore.hw_1_2_12_19;
+package com.Epam.JavaCore.hw1_2_12_19;
 
 public class Main {
 

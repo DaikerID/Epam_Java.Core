@@ -1,4 +1,4 @@
-package com.Epam.JavaCore.hw_3_6_12_19;
+package com.Epam.JavaCore.hw3_6_12_19;
 
 import java.util.Vector;
 

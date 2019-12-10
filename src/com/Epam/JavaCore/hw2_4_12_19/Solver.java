@@ -1,4 +1,4 @@
-package com.Epam.JavaCore.hw_2_4_12_19;
+package com.Epam.JavaCore.hw2_4_12_19;
 
 public class Solver {
 
