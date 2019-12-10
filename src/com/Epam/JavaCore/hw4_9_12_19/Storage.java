@@ -60,11 +60,9 @@ public class Storage {
     }
 
     private Entity[] addInArray(Entity entity, Entity[] oldArrray, Entity[] newArray) {
-        Long maxId = 0l;
         for (int i = 0; i < oldArrray.length; i++) {
             newArray[i] = oldArrray[i];
         }
-        entity.setId(maxId);
         newArray[oldArrray.length] = entity;
         return newArray;
     }
