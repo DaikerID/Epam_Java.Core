@@ -17,50 +17,44 @@ public class Storage {
     private Long carrierLastID = 1l;
     private Long transportationLastID = 1l;
 
-    public void addCargo(Entity entity) {
-        if (entity != null) {
-            if (Cargo.class.equals(entity.getClass())) {
-                entity.setId(cargoLastID);
-                cargoLastID++;
-                if (cargosLength < cargos.length) {
-                    cargos[cargosLength] = (Cargo) entity;
-                    cargosLength++;
-                } else {
-                    cargos = (Cargo[]) addInArray(entity, cargos, new Cargo[cargosLength + 10]);
-                    cargosLength++;
-                }
+    public void addCargo(Cargo cargo) {
+        if (cargo != null) {
+            cargo.setId(cargoLastID);
+            cargoLastID++;
+            if (cargosLength < cargos.length) {
+                cargos[cargosLength] = cargo;
+                cargosLength++;
+            } else {
+                cargos = (Cargo[]) addInArray(cargo, cargos, new Cargo[cargosLength + 10]);
+                cargosLength++;
             }
         }
     }
 
-    public void addCarrier(Entity entity) {
-        if (entity != null) {
-            if (Carrier.class.equals(entity.getClass())) {
-                entity.setId(carrierLastID);
-                carrierLastID++;
-                if (carriersLength < carriers.length) {
-                    carriers[carriersLength] = (Carrier) entity;
-                    carriersLength++;
-                } else {
-                    carriers = (Carrier[]) addInArray(entity, carriers, new Carrier[carriersLength + 10]);
-                    carriersLength++;
-                }
+    public void addCarrier(Carrier carrier) {
+        if (carrier != null) {
+            carrier.setId(carrierLastID);
+            carrierLastID++;
+            if (carriersLength < carriers.length) {
+                carriers[carriersLength] = carrier;
+                carriersLength++;
+            } else {
+                carriers = (Carrier[]) addInArray(carrier, carriers, new Carrier[carriersLength + 10]);
+                carriersLength++;
             }
         }
     }
 
-    public void addTransportation(Entity entity) {
-        if (entity != null) {
-            if (Transportation.class.equals(entity.getClass())) {
-                entity.setId(transportationLastID);
-                transportationLastID++;
-                if (transportationsLength < transportations.length) {
-                    transportations[transportationsLength] = (Transportation) entity;
-                    transportationsLength++;
-                } else {
-                    transportations = (Transportation[]) addInArray(entity, transportations, new Transportation[transportationsLength + 10]);
-                    transportationsLength++;
-                }
+    public void addTransportation(Transportation transportation) {
+        if (transportation != null) {
+            transportation.setId(transportationLastID);
+            transportationLastID++;
+            if (transportationsLength < transportations.length) {
+                transportations[transportationsLength] = transportation;
+                transportationsLength++;
+            } else {
+                transportations = (Transportation[]) addInArray(transportation, transportations, new Transportation[transportationsLength + 10]);
+                transportationsLength++;
             }
         }
     }
