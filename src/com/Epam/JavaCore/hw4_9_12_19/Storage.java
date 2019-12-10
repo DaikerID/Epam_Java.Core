@@ -58,7 +58,7 @@ public class Storage {
                     transportations[transportationsLength] = (Transportation) entity;
                     transportationsLength++;
                 } else {
-                    transportations = (Transportation[]) addInArray(entity, transportations, new Transportation[transportationsLength]);
+                    transportations = (Transportation[]) addInArray(entity, transportations, new Transportation[transportationsLength + 10]);
                     transportationsLength++;
                 }
             }
