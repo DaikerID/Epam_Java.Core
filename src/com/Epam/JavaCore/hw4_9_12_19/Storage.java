@@ -14,8 +14,8 @@ public class Storage {
     private int carriersLength = 0;
     private int transportationsLength = 0;
     private Long cargoLastID = 1l;
-    private Long carrierLastID = 2l;
-    private Long transportationLastID = 3l;
+    private Long carrierLastID = 1l;
+    private Long transportationLastID = 1l;
 
     public void add(Entity entity) {
         if (entity != null) {
