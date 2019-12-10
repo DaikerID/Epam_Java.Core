@@ -12,9 +12,6 @@ public class Storage {
     private int carriersLength = 0;
     private int transportationsLength = 0;
 
-    public Entity[] getCargos() {
-        return cargos;
-    }
 
     public void add(Entity entity) {
         if (entity != null) {
@@ -23,10 +20,10 @@ public class Storage {
                 cargos = addInMass(entity, cargos, new Cargo[cargosLength]);
             } else if (Carrier.class.equals(entity.getClass())) {
                 carriersLength++;
-                carriers = addInMass(entity,carriers,new Carrier[carriersLength]);
+                carriers = addInMass(entity, carriers, new Carrier[carriersLength]);
             } else if (Transportation.class.equals(entity.getClass())) {
                 transportationsLength++;
-                transportations = addInMass(entity, transportations,new Transportation[transportationsLength]);
+                transportations = addInMass(entity, transportations, new Transportation[transportationsLength]);
             }
         }
     }
@@ -45,6 +42,10 @@ public class Storage {
         newMassive[oldMassive.length] = entity;
 
         return newMassive;
+    }
+
+    public Entity[] getCargos() {
+        return cargos;
     }
 
     public Entity[] getCarriers() {
