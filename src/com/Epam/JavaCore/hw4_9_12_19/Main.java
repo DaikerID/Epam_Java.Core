@@ -39,9 +39,19 @@ public class Main {
         Entity[] entities = {apple, banana, orange, dhl, fedEx, ups, transportation1, transportation2, transportation3};
 
         Storage storage = new Storage();
-        for (Entity entity : entities) {
-            storage.add(entity);
-        }
+
+        storage.addCargo(apple);
+        storage.addCargo(banana);
+        storage.addCargo(orange);
+
+        storage.addCarrier(dhl);
+        storage.addCarrier(fedEx);
+        storage.addCarrier(ups);
+
+        storage.addTransportation(transportation1);
+        storage.addTransportation(transportation2);
+        storage.addTransportation(transportation3);
+
 
         Cargo[] cargos = storage.getCargos();
         Carrier[] carriers = storage.getCarriers();
@@ -49,17 +59,23 @@ public class Main {
 
         System.out.println("Грузы");
         for (Cargo cargo : cargos) {
-            System.out.println(cargo.getId() + " " + cargo.getName());
+            if (cargo != null) {
+                System.out.println(cargo.getId() + " " + cargo.getName());
+            }
         }
 
         System.out.println("\nПеревозчики");
         for (Carrier carrier : carriers) {
-            System.out.println(carrier.getId() + " " + carrier.getName());
+            if (carrier != null) {
+                System.out.println(carrier.getId() + " " + carrier.getName());
+            }
         }
 
         System.out.println("\nПеревозки");
         for (Transportation transportation : transportations) {
-            System.out.println(transportation.getId() + " " + transportation.getName());
+            if (transportation != null) {
+                System.out.println(transportation.getId() + " " + transportation.getName());
+            }
         }
     }
 }
