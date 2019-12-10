@@ -30,7 +30,6 @@ public class Storage {
 
     private Entity[] addInMass(Entity entity, Entity[] oldMassive, Entity[] newMassive) {
         Long maxId = 0l;
-
         for (int i = 0; i < oldMassive.length; i++) {
             newMassive[i] = oldMassive[i];
             if (oldMassive[i].getId() > maxId) {
@@ -44,15 +43,15 @@ public class Storage {
         return newMassive;
     }
 
-    public Entity[] getCargos() {
-        return cargos;
+    public Cargo[] getCargos() {
+        return (Cargo[])cargos;
     }
 
-    public Entity[] getCarriers() {
-        return carriers;
+    public Carrier[] getCarriers() {
+        return (Carrier[])carriers;
     }
 
-    public Entity[] getTransportations() {
-        return transportations;
+    public Transportation[] getTransportations() {
+        return (Transportation[])transportations;
     }
 }

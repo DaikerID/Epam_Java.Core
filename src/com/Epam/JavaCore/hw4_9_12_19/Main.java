@@ -43,23 +43,23 @@ public class Main {
             storage.add(entity);
         }
 
-        Entity[] cargos = storage.getCargos();
-        Entity[] carriers = storage.getCarriers();
-        Entity[] transportations = storage.getTransportations();
+        Cargo[] cargos = storage.getCargos();
+        Carrier[] carriers = storage.getCarriers();
+        Transportation[] transportations = storage.getTransportations();
 
         System.out.println("Грузы");
-        for (Entity entity : cargos) {
-            System.out.println(entity.getId() + " " + entity.getName());
+        for (Cargo cargo : cargos) {
+            System.out.println(cargo.getId() + " " + cargo.getName());
         }
 
         System.out.println("\nПеревозчики");
-        for (Entity entity : carriers) {
-            System.out.println(entity.getId() + " " + entity.getName());
+        for (Carrier carrier : carriers) {
+            System.out.println(carrier.getId() + " " + carrier.getName());
         }
 
         System.out.println("\nПеревозки");
-        for (Entity entity : transportations) {
-            System.out.println(entity.getId() + " " + entity.getName());
+        for (Transportation transportation : transportations) {
+            System.out.println(transportation.getId() + " " + transportation.getName());
         }
     }
 }
