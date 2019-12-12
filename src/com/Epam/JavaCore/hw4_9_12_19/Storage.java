@@ -4,8 +4,6 @@ import com.Epam.JavaCore.hw4_9_12_19.cargo.Cargo;
 import com.Epam.JavaCore.hw4_9_12_19.carrier.Carrier;
 import com.Epam.JavaCore.hw4_9_12_19.transportation.Transportation;
 
-import java.util.Arrays;
-
 public class Storage {
     private Cargo[] cargos = new Cargo[10];
     private Carrier[] carriers = new Carrier[10];
