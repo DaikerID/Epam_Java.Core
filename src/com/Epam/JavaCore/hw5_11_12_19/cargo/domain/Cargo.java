@@ -7,10 +7,10 @@ import java.util.Arrays;
 
 public class Cargo extends Entity{
     private Long id;
-    private String name;
-    private int weight;
-    private CargoType cargoType;
-    private Transportation[] transportations;
+    protected String name;
+    protected int weight;
+    protected CargoType cargoType;
+    protected Transportation[] transportations;
 
     public Long getId() {
         return id;
