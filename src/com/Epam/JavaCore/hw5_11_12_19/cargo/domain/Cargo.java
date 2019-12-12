@@ -6,19 +6,10 @@ import com.Epam.JavaCore.hw5_11_12_19.transportation.domain.Transportation;
 import java.util.Arrays;
 
 public class Cargo extends Entity{
-    private Long id;
     protected String name;
     protected int weight;
     protected CargoType cargoType;
     protected Transportation[] transportations;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

@@ -6,7 +6,6 @@ import com.Epam.JavaCore.hw5_11_12_19.transportation.domain.Transportation;
 import java.util.Arrays;
 
 public class Carrier extends Entity {
-    private Long id;
     private String name;
     private String address;
     private CarrierType carrierType;
