@@ -1,6 +1,6 @@
 package com.Epam.JavaCore.hw5_11_12_19.common;
 
-public class Entity {
+public abstract class Entity {
     protected Long id;
 
     public Long getId() {
