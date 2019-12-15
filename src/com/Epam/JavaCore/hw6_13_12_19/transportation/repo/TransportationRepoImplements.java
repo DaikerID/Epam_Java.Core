@@ -1,13 +1,12 @@
 package com.Epam.JavaCore.hw6_13_12_19.transportation.repo;
 
+import com.Epam.JavaCore.hw6_13_12_19.carrier.domain.Carrier;
 import com.Epam.JavaCore.hw6_13_12_19.common.utils.ArrayUtils;
 import com.Epam.JavaCore.hw6_13_12_19.storage.IdGenerator;
+import com.Epam.JavaCore.hw6_13_12_19.storage.Storage;
 import com.Epam.JavaCore.hw6_13_12_19.transportation.domain.Transportation;
 
-public class TransportationRepoImplements implements TransportationRepo {
-    private static final int ARRAY_CAPACITY = 10;
-    private static Transportation[] transportations = new Transportation[ARRAY_CAPACITY];
-    private static int transportationIndex = 0;
+public class TransportationRepoImplements extends Storage implements TransportationRepo {
 
     @Override
     public void add(Transportation transportation) {
@@ -30,6 +29,15 @@ public class TransportationRepoImplements implements TransportationRepo {
             }
         }
         return null;
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        for (int i = 0; i < transportations.length; i++) {
+            if (transportations[i].getId().equals(id)) {
+                transportations = (Transportation[]) ArrayUtils.cutArrayWithout(transportations, i);
+            }
+        }
     }
 
     @Override

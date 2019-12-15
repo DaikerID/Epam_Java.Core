@@ -5,14 +5,11 @@ import com.Epam.JavaCore.hw6_13_12_19.cargo.domain.Cargo;
 import com.Epam.JavaCore.hw6_13_12_19.carrier.domain.Carrier;
 import com.Epam.JavaCore.hw6_13_12_19.common.utils.ArrayUtils;
 import com.Epam.JavaCore.hw6_13_12_19.storage.IdGenerator;
+import com.Epam.JavaCore.hw6_13_12_19.storage.Storage;
 
 import java.util.Objects;
 
-public class CarrierRepoImplements implements CarrierRepo {
-    private static final int ARRAY_CAPACITY = 10;
-    private static Carrier[] carriers = new Carrier[ARRAY_CAPACITY];
-    private static int carrierIndex = 0;
-
+public class CarrierRepoImpl extends Storage implements CarrierRepo {
 
     @Override
     public void add(Carrier carrier) {
@@ -38,6 +35,15 @@ public class CarrierRepoImplements implements CarrierRepo {
     }
 
     @Override
+    public void deleteById(Long id) {
+        for (int i = 0; i < carriers.length; i++) {
+            if (carriers[i].getId().equals(id)) {
+                carriers = (Carrier[]) ArrayUtils.cutArrayWithout(carriers, i);
+            }
+        }
+    }
+
+    @Override
     public Carrier[] getByName(String name) {
         Carrier[] result = new Carrier[carriers.length];
 
@@ -47,9 +53,8 @@ public class CarrierRepoImplements implements CarrierRepo {
                 result[curIndex++] = carrier;
             }
         }
-        Carrier[] cleanResult = new Carrier[curIndex];
-        ArrayUtils.cutArray(result, cleanResult);
-        return cleanResult;
+
+        return (Carrier[]) ArrayUtils.excludeNullableElems(result, carrierIndex);
     }
 
     @Override

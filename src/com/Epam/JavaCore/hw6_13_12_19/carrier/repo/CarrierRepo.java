@@ -10,5 +10,7 @@ public interface CarrierRepo {
 
     Carrier[] getByName(String name);
 
+    void deleteById(Long id);
+
     void printAll();
 }

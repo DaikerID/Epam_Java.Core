@@ -2,9 +2,14 @@ package com.Epam.JavaCore.hw6_13_12_19.cargo.service;
 
 import com.Epam.JavaCore.hw6_13_12_19.cargo.domain.Cargo;
 
-public class CargoServiceImplements implements CargoService {
+public class CargoServiceImpl implements CargoService {
     @Override
     public void add(Cargo cargo) {
+
+    }
+
+    @Override
+    public void deleteById(Long id) {
 
     }
 
@@ -15,11 +20,11 @@ public class CargoServiceImplements implements CargoService {
 
     @Override
     public Cargo[] getByName(String name) {
-        return null;
+        return new Cargo[0];
     }
 
     @Override
-    public void printAllCargos() {
+    public void printAll() {
 
     }
 }

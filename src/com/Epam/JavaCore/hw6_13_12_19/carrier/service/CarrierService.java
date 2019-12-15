@@ -8,7 +8,9 @@ public interface CarrierService {
 
     Carrier getById(long id);
 
-    Carrier getByName(String name);
+    Carrier[] getByName(String name);
+
+    void deleteById(Long id);
 
     void printAll();
 }

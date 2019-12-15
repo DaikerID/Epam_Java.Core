@@ -14,6 +14,11 @@ public class TransportationServiceImplements implements TransportationService {
     }
 
     @Override
+    public void deleteById(Long id) {
+
+    }
+
+    @Override
     public void printAll() {
 
     }

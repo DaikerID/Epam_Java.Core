@@ -17,14 +17,28 @@ public final class ArrayUtils {
         }
     }
 
-    public static void cutArray(Object[] src, Object[] dest) {
+    public static Object[] excludeNullableElems(Object[] src, int size) {
+        Object[] newMass = new Object[size];
         int index = 0;
         for (Object obj : src) {
             if (obj != null) {
-                dest[index] = obj;
+                newMass[index] = obj;
                 index++;
             }
         }
+        return newMass;
+    }
+
+    public static Object[] cutArrayWithout(Object[] src, int iter) {
+        Object[] newSrc = new Object[src.length];
+        int newIter = 0;
+        for (int i = 0; i < src.length; i++) {
+            if (i != iter) {
+                newSrc[newIter] = src[i];
+                newIter++;
+            }
+        }
+        return newSrc;
     }
 
 }

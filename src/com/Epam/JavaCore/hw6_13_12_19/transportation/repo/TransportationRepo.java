@@ -7,5 +7,7 @@ public interface TransportationRepo {
 
     Transportation getById(long id);
 
+    void deleteById(Long id);
+
     void printAll();
 }

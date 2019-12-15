@@ -3,7 +3,7 @@ package com.Epam.JavaCore.hw6_13_12_19.carrier.service;
 
 import com.Epam.JavaCore.hw6_13_12_19.carrier.domain.Carrier;
 
-public class CarrierServiceImplements implements CarrierService {
+public class CarrierServiceImpl implements CarrierService {
     @Override
     public void add(Carrier carrier) {
 
@@ -15,8 +15,13 @@ public class CarrierServiceImplements implements CarrierService {
     }
 
     @Override
-    public Carrier getByName(String name) {
-        return null;
+    public Carrier[] getByName(String name) {
+        return new Carrier[0];
+    }
+
+    @Override
+    public void deleteById(Long id) {
+
     }
 
     @Override
