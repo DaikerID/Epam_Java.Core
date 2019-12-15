@@ -17,12 +17,12 @@ public final class ArrayUtils {
         }
     }
 
-    public static void cutArray(Object[] src, Object[] dest){
+    public static void cutArray(Object[] src, Object[] dest) {
         int index = 0;
         for (Object obj : src) {
             if (obj != null) {
-               dest[index] = obj;
-               index++;
+                dest[index] = obj;
+                index++;
             }
         }
     }

@@ -28,7 +28,7 @@ public class Main {
         System.out.println("-----------------------------");
         cargos = Storage.getCargosByName("sand");
         for (Cargo cargo : cargos) {
-                System.out.println(cargo);
+            System.out.println(cargo);
         }
     }
 }

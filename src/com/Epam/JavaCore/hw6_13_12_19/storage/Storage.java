@@ -65,7 +65,8 @@ public class Storage {
     }
 
     public static void printAllTransportations() {
-        ArrayUtils.printArray(transportations);    }
+        ArrayUtils.printArray(transportations);
+    }
 
     public static Cargo getCargoById(long id) {
         for (Cargo cargo : cargos) {
@@ -104,7 +105,7 @@ public class Storage {
             }
         }
         Cargo[] cleanResult = new Cargo[0];
-        ArrayUtils.cutArray(result,cleanResult);
+        ArrayUtils.cutArray(result, cleanResult);
         return cleanResult;
     }
 
@@ -118,7 +119,7 @@ public class Storage {
             }
         }
         Carrier[] cleanResult = new Carrier[curIndex];
-        ArrayUtils.cutArray(result,cleanResult);
+        ArrayUtils.cutArray(result, cleanResult);
         return cleanResult;
     }
 }
