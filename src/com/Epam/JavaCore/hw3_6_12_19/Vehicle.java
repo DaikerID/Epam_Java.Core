@@ -1,6 +1,6 @@
 package com.Epam.JavaCore.hw3_6_12_19;
 
-public enum Vehicle {
+public enum     Vehicle {
     TRUCK(2, 10000, 45),
     PLANE(3, 8000, 800),
     TRAIN(1, 50000, 100000),
