@@ -7,7 +7,6 @@ import com.Epam.JavaCore.hw8_18_12_19.common.business.service.SortType;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class CargoServiceImpl implements CargoService {
@@ -62,22 +61,6 @@ public class CargoServiceImpl implements CargoService {
     }
 
     public List<Cargo> getSorted(SortBy sortBy, SortType sortType) {
-        List<Cargo> sortedList = cargoRepo.getAll();
-        sortedList.sort(new Comparator<Cargo>() {
-            @Override
-            public int compare(Cargo o1, Cargo o2) {
-                int type = SortType.ASC.equals(sortType) ? 1 : -1;
-                switch (sortBy) {
-                    case NAME:
-                        return type * o1.getName().compareTo(o2.getName());
-                    case WEIGHT:
-                        return type * Integer.compare(o1.getWeight(), o2.getWeight());
-                    default:
-                        int compareNames = o1.getName().compareTo(o2.getName());
-                        return type * compareNames != 0 ? compareNames : Integer.compare(o1.getWeight(), o2.getWeight());
-                }
-            }
-        });
-        return sortedList;
+        return cargoRepo.getSorted(sortBy, sortType);
     }
 }

@@ -3,13 +3,13 @@ package com.Epam.JavaCore.hw8_18_12_19.cargo.repo.impl;
 
 import com.Epam.JavaCore.hw8_18_12_19.cargo.domain.Cargo;
 import com.Epam.JavaCore.hw8_18_12_19.cargo.repo.CargoRepo;
+import com.Epam.JavaCore.hw8_18_12_19.cargo.service.SortBy;
+import com.Epam.JavaCore.hw8_18_12_19.common.business.service.SortType;
 import com.Epam.JavaCore.hw8_18_12_19.storage.IdGenerator;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
+import static com.Epam.JavaCore.hw8_18_12_19.storage.Storage.cargoArray;
 import static com.Epam.JavaCore.hw8_18_12_19.storage.Storage.cargoCollection;
 
 public class CargoCollectionRepoImpl implements CargoRepo {
@@ -56,6 +56,27 @@ public class CargoCollectionRepoImpl implements CargoRepo {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public List<Cargo> getSorted(SortBy sortBy, SortType sortType) {
+        List<Cargo> sortedList = cargoCollection;
+        sortedList.sort(new Comparator<Cargo>() {
+            @Override
+            public int compare(Cargo o1, Cargo o2) {
+                int type = SortType.ASC.equals(sortType) ? 1 : -1;
+                switch (sortBy) {
+                    case NAME:
+                        return type * o1.getName().compareTo(o2.getName());
+                    case WEIGHT:
+                        return type * Integer.compare(o1.getWeight(), o2.getWeight());
+                    default:
+                        int compareNames = o1.getName().compareTo(o2.getName());
+                        return type * compareNames != 0 ? compareNames : Integer.compare(o1.getWeight(), o2.getWeight());
+                }
+            }
+        });
+        return sortedList;
     }
 
     @Override
