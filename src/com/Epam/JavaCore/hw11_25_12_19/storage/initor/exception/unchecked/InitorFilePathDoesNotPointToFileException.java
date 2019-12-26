@@ -1,4 +1,4 @@
-package com.Epam.JavaCore.hw11_25_12_19.storage.initor.eception.unchecked;
+package com.Epam.JavaCore.hw11_25_12_19.storage.initor.exception.unchecked;
 
 import com.Epam.JavaCore.hw11_25_12_19.common.business.exception.unchecked.OurCompanyException;
 

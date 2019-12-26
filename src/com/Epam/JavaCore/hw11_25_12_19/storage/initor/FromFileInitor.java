@@ -9,7 +9,7 @@ import com.Epam.JavaCore.hw11_25_12_19.carrier.domain.Carrier;
 import com.Epam.JavaCore.hw11_25_12_19.carrier.domain.CarrierType;
 import com.Epam.JavaCore.hw11_25_12_19.carrier.service.CarrierService;
 import com.Epam.JavaCore.hw11_25_12_19.common.business.service.CommonService;
-import com.Epam.JavaCore.hw11_25_12_19.storage.initor.eception.unchecked.InitorFilePathDoesNotPointToFileException;
+import com.Epam.JavaCore.hw11_25_12_19.storage.initor.exception.unchecked.InitorFilePathDoesNotPointToFileException;
 import com.Epam.JavaCore.hw11_25_12_19.transportation.domain.Transportation;
 
 import java.io.BufferedReader;
