@@ -2,6 +2,7 @@ package com.Epam.JavaCore.hw11_25_12_19.storage.initor;
 
 import com.Epam.JavaCore.hw11_25_12_19.application.serviceholder.ServiceHolder;
 import com.Epam.JavaCore.hw11_25_12_19.cargo.domain.Cargo;
+import com.Epam.JavaCore.hw11_25_12_19.cargo.domain.CargoType;
 import com.Epam.JavaCore.hw11_25_12_19.cargo.domain.ClothersCargo;
 import com.Epam.JavaCore.hw11_25_12_19.cargo.domain.FoodCargo;
 import com.Epam.JavaCore.hw11_25_12_19.cargo.service.CargoService;
@@ -57,8 +58,8 @@ public class FromFileInitor {
     private static void initCargoFromLine(String line) throws ParseException {
         CommonService cargoService = ServiceHolder.getInstance().getCargoService();
 
-        switch (line.substring(0, line.indexOf("|"))) {
-            case "FOOD":
+        switch (CargoType.valueOf(line.substring(0, line.indexOf("|")))) {
+            case FOOD:
                 FoodCargo foodCargo = new FoodCargo();
                 String integ = line.substring(line.lastIndexOf("|") + 1);
                 foodCargo.setStoreTemperature(Integer.parseInt(integ));
@@ -73,7 +74,7 @@ public class FromFileInitor {
 
                 cargoService.save(getCargoDataFromLine(foodCargo, line));
                 break;
-            case "CLOTHERS":
+            case CLOTHERS:
                 ClothersCargo clothersCargo = new ClothersCargo();
 
                 clothersCargo.setMaterial(line.substring(line.indexOf("|")) + 1);
@@ -91,21 +92,7 @@ public class FromFileInitor {
         CommonService carrierService = ServiceHolder.getInstance().getCarrierService();
         Carrier carrier = new Carrier();
 
-        CarrierType carrierType;
-        switch (line.substring(line.lastIndexOf("|") + 1)) {
-            case "SHIP":
-                carrierType = CarrierType.SHIP;
-                break;
-            case "PLANE":
-                carrierType = CarrierType.PLANE;
-                break;
-            case "CAR":
-                carrierType = CarrierType.CAR;
-                break;
-            default:
-                carrierType = CarrierType.TRAIN;
-        }
-        carrier.setCarrierType(carrierType);
+        carrier.setCarrierType(CarrierType.valueOf(line.substring(line.lastIndexOf("|") + 1)));
         line = line.substring(0, line.lastIndexOf("|"));
 
         carrier.setAddress(line.substring(line.lastIndexOf("|") + 1));
