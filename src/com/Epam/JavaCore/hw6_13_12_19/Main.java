@@ -21,12 +21,12 @@ public class Main {
 
         Cargo[] cargos = {sand1, sand2, sand3, sand};
         for (Cargo cargo : cargos) {
-            Storage.addCargo(cargo);
+            //Storage.addCargo(cargo);
         }
 
-        System.out.println(Storage.getCargoById(1l));
+        //System.out.println(Storage.getCargoById(1l));
         System.out.println("-----------------------------");
-        cargos = Storage.getCargosByName("sand");
+        //cargos = Storage.getCargosByName("sand");
         for (Cargo cargo : cargos) {
             System.out.println(cargo);
         }
