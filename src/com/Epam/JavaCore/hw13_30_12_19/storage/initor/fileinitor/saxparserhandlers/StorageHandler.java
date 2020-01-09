@@ -130,28 +130,26 @@ public class StorageHandler extends DefaultHandler {
     }
 
     private void endCarrier(String qName, String data) {
-        if (currCarrier != null) {
-            switch (qName) {
-                case "name": {
-                    currCarrier.setName(data);
-                    break;
-                }
+        switch (qName) {
+            case "name": {
+                currCarrier.setName(data);
+                break;
+            }
 
-                case "address": {
-                    currCarrier.setAddress(data);
-                    break;
-                }
+            case "address": {
+                currCarrier.setAddress(data);
+                break;
+            }
 
-                case "type": {
-                    currCarrier.setCarrierType(CarrierType.valueOf(data));
-                    break;
-                }
+            case "type": {
+                currCarrier.setCarrierType(CarrierType.valueOf(data));
+                break;
+            }
 
-                case "carrier": {
-                    carrierMap.put(currKeyCarrier, currCarrier);
-                    currCarrier = null;
-                    break;
-                }
+            case "carrier": {
+                carrierMap.put(currKeyCarrier, currCarrier);
+                currCarrier = null;
+                break;
             }
         }
     }
