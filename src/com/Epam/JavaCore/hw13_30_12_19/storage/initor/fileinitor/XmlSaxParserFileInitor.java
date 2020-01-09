@@ -3,9 +3,7 @@ package com.Epam.JavaCore.hw13_30_12_19.storage.initor.fileinitor;
 import com.Epam.JavaCore.hw13_30_12_19.cargo.domain.Cargo;
 import com.Epam.JavaCore.hw13_30_12_19.carrier.domain.Carrier;
 import com.Epam.JavaCore.hw13_30_12_19.common.solutions.utils.FileUtils;
-import com.Epam.JavaCore.hw13_30_12_19.storage.initor.fileinitor.saxparserhandlers.CargoHandler;
-import com.Epam.JavaCore.hw13_30_12_19.storage.initor.fileinitor.saxparserhandlers.CarrierHandler;
-import com.Epam.JavaCore.hw13_30_12_19.storage.initor.fileinitor.saxparserhandlers.TransportationHandler;
+import com.Epam.JavaCore.hw13_30_12_19.storage.initor.fileinitor.saxparserhandlers.StorageHandler;
 import com.Epam.JavaCore.hw13_30_12_19.transportation.domain.Transportation;
 
 import org.xml.sax.SAXException;
@@ -19,29 +17,24 @@ import java.util.*;
 
 
 public class XmlSaxParserFileInitor extends BaseFileInitor {
-    private static final String FILE = "/ru/Epam/JavaCore/lesson_12_io_nio/initdata/xmldata.xml";
+    private static final String FILE = "/com/Epam/JavaCore/lesson_12_io_nio/initdata/xmldata.xml";
     private static final String STATIC_FILE = "C:\\Users\\igorh\\IdeaProjects\\Epam_Java.Core\\resourses\\com\\Epam\\JavaCore\\lesson_12_io_nio\\initdata\\xmldata.xml";
+
     @Override
     public void initStorage() throws IOException, ParserConfigurationException, SAXException {
-        File file = getFileWithInitData();
+        //File file = getFileWithInitData();
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser saxParser = factory.newSAXParser();
 
-        CargoHandler cargoHandler = new CargoHandler();
-        CarrierHandler carrierHandler = new CarrierHandler();
-        TransportationHandler transportationHandler = new TransportationHandler();
+        StorageHandler storageHandler = new StorageHandler();
 
-        saxParser.parse(file, cargoHandler);
-        saxParser.parse(file, carrierHandler);
-        saxParser.parse(file, transportationHandler);
+//        saxParser.parse(file, storageHandler);
+        saxParser.parse(new File(STATIC_FILE), storageHandler);
 
-      //  saxParser.parse(new File(STATIC_FILE), cargoHandler);
-       // saxParser.parse(new File(STATIC_FILE), carrierHandler);
-        //saxParser.parse(new File(STATIC_FILE), transportationHandler);
+        Map<String, Cargo> cargoMap = storageHandler.getCargoMap();
+        Map<String, Carrier> carrierMap = storageHandler.getCarrierMap();
+        List<ParsedTransportation> transportations = storageHandler.getTransportations();
 
-       Map<String, Cargo> cargoMap = cargoHandler.getCargoMap();
-        Map<String, Carrier> carrierMap = carrierHandler.getCarrierMap();
-        List<ParsedTransportation> transportations = transportationHandler.getTransportations();
         setReferencesBetweenEntities(cargoMap, carrierMap, transportations);
 
         persistCargos(cargoMap.values());
