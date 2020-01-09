@@ -69,15 +69,15 @@ public class StorageHandler extends DefaultHandler {
         String data = stringBuilder.toString();
 
         if (currCargo != null) {
-            endCargo(qName, data);
+            fillCargoithData(qName, data);
         } else if (currCarrier != null) {
-            endCarrier(qName, data);
+            fillCarrierWithData(qName, data);
         } else if (currTransportation != null) {
-            endTransporrtation(qName, data);
+            fillTransportationWithData(qName, data);
         }
     }
 
-    private void endCargo(String qName, String data) {
+    private void fillCargoithData(String qName, String data) {
         switch (qName) {
             case "name": {
                 currCargo.setName(data);
@@ -129,7 +129,7 @@ public class StorageHandler extends DefaultHandler {
         }
     }
 
-    private void endCarrier(String qName, String data) {
+    private void fillCarrierWithData(String qName, String data) {
         switch (qName) {
             case "name": {
                 currCarrier.setName(data);
@@ -154,7 +154,7 @@ public class StorageHandler extends DefaultHandler {
         }
     }
 
-    private void endTransporrtation(String qName, String data) {
+    private void fillTransportationWithData(String qName, String data) {
         switch (qName) {
             case "billto": {
                 currTransportation.setBillTo(data);
@@ -184,7 +184,6 @@ public class StorageHandler extends DefaultHandler {
             }
         }
     }
-
 
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
