@@ -23,7 +23,7 @@ public class XmlSaxParserFileInitor extends BaseFileInitor {
     private static final String STATIC_FILE = "C:\\Users\\igorh\\IdeaProjects\\Epam_Java.Core\\resourses\\com\\Epam\\JavaCore\\lesson_12_io_nio\\initdata\\xmldata.xml";
     @Override
     public void initStorage() throws IOException, ParserConfigurationException, SAXException {
-        //File file = getFileWithInitData();
+        File file = getFileWithInitData();
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser saxParser = factory.newSAXParser();
 
@@ -31,9 +31,13 @@ public class XmlSaxParserFileInitor extends BaseFileInitor {
         CarrierHandler carrierHandler = new CarrierHandler();
         TransportationHandler transportationHandler = new TransportationHandler();
 
-        saxParser.parse(new File(STATIC_FILE), cargoHandler);
-        saxParser.parse(new File(STATIC_FILE), carrierHandler);
-        saxParser.parse(new File(STATIC_FILE), transportationHandler);
+        saxParser.parse(file, cargoHandler);
+        saxParser.parse(file, carrierHandler);
+        saxParser.parse(file, transportationHandler);
+
+      //  saxParser.parse(new File(STATIC_FILE), cargoHandler);
+       // saxParser.parse(new File(STATIC_FILE), carrierHandler);
+        //saxParser.parse(new File(STATIC_FILE), transportationHandler);
 
        Map<String, Cargo> cargoMap = cargoHandler.getCargoMap();
         Map<String, Carrier> carrierMap = carrierHandler.getCarrierMap();

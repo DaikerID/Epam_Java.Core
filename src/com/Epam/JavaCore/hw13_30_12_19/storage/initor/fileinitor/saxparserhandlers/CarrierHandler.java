@@ -41,10 +41,11 @@ public class CarrierHandler extends DefaultHandler {
                 }
                 case "type": {
                     currCarrier.setCarrierType(CarrierType.valueOf(data));
+                    break;
                 }
                 case "carrier": {
                     carrierMap.put(currKeyCarrier, currCarrier);
-                    //currCarrier = null;
+                    currCarrier = null;
                     break;
                 }
             }
