@@ -68,25 +68,29 @@ public class StorageHandler extends DefaultHandler {
     public void endElement(String uri, String localName, String qName) throws SAXException {
         String data = stringBuilder.toString();
 
+        if (currCargo != null) {
+            endCargo(qName, data);
+        } else if (currCarrier != null) {
+            endCarrier(qName, data);
+        } else if (currTransportation != null) {
+            endTransporrtation(qName, data);
+        }
+    }
+
+    private void endCargo(String qName, String data) {
         switch (qName) {
             case "name": {
-                if (currCargo != null) {
-                    currCargo.setName(data);
-                } else if (currCarrier != null) {
-                    currCarrier.setName(data);
-                }
+                currCargo.setName(data);
                 break;
             }
 
             case "weight": {
-                if (currCargo != null) {
-                    currCargo.setWeight(Integer.valueOf(data));
-                }
+                currCargo.setWeight(Integer.valueOf(data));
                 break;
             }
 
             case "expirationDate": {
-                if (currCargo != null && FoodCargo.class.equals(currCargo.getClass())) {
+                if (FoodCargo.class.equals(currCargo.getClass())) {
                     try {
                         ((FoodCargo) currCargo).setExpirationDate(parseDate(data));
                     } catch (ParseException e) {
@@ -97,61 +101,22 @@ public class StorageHandler extends DefaultHandler {
             }
 
             case "storeTemperature": {
-                if (currCargo != null && FoodCargo.class.equals(currCargo.getClass())) {
+                if (FoodCargo.class.equals(currCargo.getClass())) {
                     ((FoodCargo) currCargo).setStoreTemperature(Integer.valueOf(data));
                 }
                 break;
             }
 
             case "size": {
-                if (currCargo != null && ClothersCargo.class.equals((currCargo.getClass()))) {
+                if (ClothersCargo.class.equals((currCargo.getClass()))) {
                     ((ClothersCargo) currCargo).setSize(data);
                 }
                 break;
             }
 
             case "material": {
-                if (currCargo != null && ClothersCargo.class.equals((currCargo.getClass()))) {
+                if (ClothersCargo.class.equals((currCargo.getClass()))) {
                     ((ClothersCargo) currCargo).setMaterial(data);
-                }
-                break;
-            }
-
-            case "address": {
-                if (currCarrier != null) {
-                    currCarrier.setAddress(data);
-                }
-                break;
-            }
-
-            case "type": {
-                if (currCarrier != null) {
-                    currCarrier.setCarrierType(CarrierType.valueOf(data));
-                }
-                break;
-            }
-
-            case "billto": {
-                if (currTransportation != null) {
-                    currTransportation.setBillTo(data);
-                }
-                break;
-            }
-
-            case "transportationBeginDate": {
-                if (currTransportation != null) {
-                    try {
-                        currTransportation.setTransportationBeginDate(parseDate(data));
-                    } catch (ParseException e) {
-                        e.printStackTrace();
-                    }
-                }
-                break;
-            }
-
-            case "description": {
-                if (currTransportation != null) {
-                    currTransportation.setDescription(data);
                 }
                 break;
             }
@@ -161,24 +126,67 @@ public class StorageHandler extends DefaultHandler {
                 currCargo = null;
                 break;
             }
+        }
+    }
 
-            case "carrier": {
-                carrierMap.put(currKeyCarrier, currCarrier);
-                currCarrier = null;
+    private void endCarrier(String qName, String data) {
+        if (currCarrier != null) {
+            switch (qName) {
+                case "name": {
+                    currCarrier.setName(data);
+                    break;
+                }
+
+                case "address": {
+                    currCarrier.setAddress(data);
+                    break;
+                }
+
+                case "type": {
+                    currCarrier.setCarrierType(CarrierType.valueOf(data));
+                    break;
+                }
+
+                case "carrier": {
+                    carrierMap.put(currKeyCarrier, currCarrier);
+                    currCarrier = null;
+                    break;
+                }
+            }
+        }
+    }
+
+    private void endTransporrtation(String qName, String data) {
+        switch (qName) {
+            case "billto": {
+                currTransportation.setBillTo(data);
+                break;
+            }
+
+            case "transportationBeginDate": {
+                try {
+                    currTransportation.setTransportationBeginDate(parseDate(data));
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                break;
+            }
+
+            case "description": {
+                currTransportation.setDescription(data);
                 break;
             }
 
             case "transportation": {
-                if (currTransportation != null) {
-                    parsedTransportation.setTransportation(currTransportation);
-                    transportations.add(parsedTransportation);
-                    parsedTransportation = null;
-                    currTransportation = null;
-                }
+                parsedTransportation.setTransportation(currTransportation);
+                transportations.add(parsedTransportation);
+                parsedTransportation = null;
+                currTransportation = null;
                 break;
             }
         }
     }
+
 
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
