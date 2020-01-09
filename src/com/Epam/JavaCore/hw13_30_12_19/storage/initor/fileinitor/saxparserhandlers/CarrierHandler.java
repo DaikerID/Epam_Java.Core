@@ -1,4 +1,4 @@
-package com.Epam.JavaCore.hw13_30_12_19.storage.initor.fileinitor.saxParserHandlers;
+package com.Epam.JavaCore.hw13_30_12_19.storage.initor.fileinitor.saxparserhandlers;
 
 import com.Epam.JavaCore.hw13_30_12_19.carrier.domain.Carrier;
 import com.Epam.JavaCore.hw13_30_12_19.carrier.domain.CarrierType;
@@ -49,6 +49,7 @@ public class CarrierHandler extends DefaultHandler {
             }
             case "carrier": {
                 carrierMap.put(currKeyCarrier, currCarrier);
+                //currCarrier = null;
                 break;
             }
         }

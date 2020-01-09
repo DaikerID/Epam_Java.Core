@@ -1,7 +1,6 @@
-package com.Epam.JavaCore.hw13_30_12_19.storage.initor.fileinitor.saxParserHandlers;
+package com.Epam.JavaCore.hw13_30_12_19.storage.initor.fileinitor.saxparserhandlers;
 
 import com.Epam.JavaCore.hw13_30_12_19.transportation.domain.Transportation;
-import com.Epam.JavaCore.hw13_30_12_19.carrier.domain.CarrierType;
 import com.Epam.JavaCore.hw13_30_12_19.storage.initor.fileinitor.BaseFileInitor;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;

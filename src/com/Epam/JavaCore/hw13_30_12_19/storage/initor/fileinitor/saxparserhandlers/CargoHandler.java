@@ -1,4 +1,4 @@
-package com.Epam.JavaCore.hw13_30_12_19.storage.initor.fileinitor.saxParserHandlers;
+package com.Epam.JavaCore.hw13_30_12_19.storage.initor.fileinitor.saxparserhandlers;
 
 import com.Epam.JavaCore.hw12_27_12_19.cargo.domain.CargoType;
 import com.Epam.JavaCore.hw13_30_12_19.cargo.domain.Cargo;
@@ -21,7 +21,6 @@ public class CargoHandler extends DefaultHandler {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         stringBuilder.setLength(0);
-
         if (qName == "cargo") {
             currKeyCargo = attributes.getValue("id");
             switch (CargoType.valueOf(attributes.getValue("type"))) {
