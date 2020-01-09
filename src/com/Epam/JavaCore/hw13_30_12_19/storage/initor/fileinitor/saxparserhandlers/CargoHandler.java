@@ -13,9 +13,9 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class CargoHandler extends DefaultHandler {
-    Map<String, Cargo> cargoMap = new HashMap<>();
-    Cargo currCargo;
-    String currKeyCargo;
+    private Map<String, Cargo> cargoMap = new HashMap<>();
+    private Cargo currCargo;
+    private String currKeyCargo;
     private StringBuilder stringBuilder = new StringBuilder();
 
     @Override

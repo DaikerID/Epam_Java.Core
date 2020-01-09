@@ -11,9 +11,9 @@ import java.util.Map;
 
 public class CarrierHandler extends DefaultHandler {
 
-    Map<String, Carrier> carrierMap = new HashMap<>();
-    Carrier currCarrier;
-    String currKeyCarrier;
+    private Map<String, Carrier> carrierMap = new HashMap<>();
+    private Carrier currCarrier;
+    private String currKeyCarrier;
     private StringBuilder stringBuilder = new StringBuilder();
 
     @Override
@@ -29,30 +29,27 @@ public class CarrierHandler extends DefaultHandler {
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
         String data = stringBuilder.toString();
-        switch (qName) {
-            case "name": {
-                if (currCarrier != null){
+        if (currCarrier != null) {
+            switch (qName) {
+                case "name": {
                     currCarrier.setName(data);
+                    break;
                 }
-                break;
-            }
-            case "address": {
-                if (currCarrier != null) {
+                case "address": {
                     currCarrier.setAddress(data);
+                    break;
                 }
-                break;
-            }
-            case "type": {
-                if (currCarrier != null) {
-               currCarrier.setCarrierType(CarrierType.valueOf(data));
+                case "type": {
+                    currCarrier.setCarrierType(CarrierType.valueOf(data));
                 }
-            }
-            case "carrier": {
-                carrierMap.put(currKeyCarrier, currCarrier);
-                //currCarrier = null;
-                break;
+                case "carrier": {
+                    carrierMap.put(currKeyCarrier, currCarrier);
+                    //currCarrier = null;
+                    break;
+                }
             }
         }
+
     }
 
     @Override

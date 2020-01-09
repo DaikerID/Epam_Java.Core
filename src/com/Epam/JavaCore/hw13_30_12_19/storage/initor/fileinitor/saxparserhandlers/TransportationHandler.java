@@ -13,9 +13,9 @@ import java.util.Date;
 import java.util.List;
 
 public class TransportationHandler extends DefaultHandler {
-    List<BaseFileInitor.ParsedTransportation> transportations = new ArrayList<>();
-    BaseFileInitor.ParsedTransportation parsedTransportation;
-    Transportation currTransportation;
+    private List<BaseFileInitor.ParsedTransportation> transportations = new ArrayList<>();
+    private BaseFileInitor.ParsedTransportation parsedTransportation;
+    private Transportation currTransportation;
 
     private StringBuilder stringBuilder = new StringBuilder();
 
