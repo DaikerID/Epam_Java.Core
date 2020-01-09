@@ -1,17 +1,17 @@
 package com.Epam.JavaCore.hw11_25_12_19.storage.initor;
 
-import com.Epam.JavaCore.hw11_25_12_19.application.serviceholder.ServiceHolder;
-import com.Epam.JavaCore.hw11_25_12_19.cargo.domain.Cargo;
-import com.Epam.JavaCore.hw11_25_12_19.cargo.domain.CargoType;
-import com.Epam.JavaCore.hw11_25_12_19.cargo.domain.ClothersCargo;
-import com.Epam.JavaCore.hw11_25_12_19.cargo.domain.FoodCargo;
-import com.Epam.JavaCore.hw11_25_12_19.cargo.service.CargoService;
-import com.Epam.JavaCore.hw11_25_12_19.carrier.domain.Carrier;
-import com.Epam.JavaCore.hw11_25_12_19.carrier.domain.CarrierType;
-import com.Epam.JavaCore.hw11_25_12_19.carrier.service.CarrierService;
-import com.Epam.JavaCore.hw11_25_12_19.common.business.service.CommonService;
-import com.Epam.JavaCore.hw11_25_12_19.storage.initor.exception.unchecked.InitorFilePathDoesNotPointToFileException;
-import com.Epam.JavaCore.hw11_25_12_19.transportation.domain.Transportation;
+import com.Epam.JavaCore.hw12_27_12_19.application.serviceholder.ServiceHolder;
+import com.Epam.JavaCore.hw12_27_12_19.cargo.domain.Cargo;
+import com.Epam.JavaCore.hw12_27_12_19.cargo.domain.CargoType;
+import com.Epam.JavaCore.hw12_27_12_19.cargo.domain.ClothersCargo;
+import com.Epam.JavaCore.hw12_27_12_19.cargo.domain.FoodCargo;
+import com.Epam.JavaCore.hw12_27_12_19.cargo.service.CargoService;
+import com.Epam.JavaCore.hw12_27_12_19.carrier.domain.Carrier;
+import com.Epam.JavaCore.hw12_27_12_19.carrier.domain.CarrierType;
+import com.Epam.JavaCore.hw12_27_12_19.carrier.service.CarrierService;
+import com.Epam.JavaCore.hw12_27_12_19.common.business.service.CommonService;
+import com.Epam.JavaCore.hw12_27_12_19.storage.initor.exception.unchecked.InitorFilePathDoesNotPointToFileException;
+import com.Epam.JavaCore.hw12_27_12_19.transportation.domain.Transportation;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -34,7 +34,7 @@ public class FromFileInitor {
             while ((line = bufferedReader.readLine()) != null) {
                 if (line.contains("BEGIN"))
                     currEntityTypeRead = line;
-                else if (!line.contains("END")) {
+                else if (!line.contains("_END---")) {
                     switch (currEntityTypeRead) {
                         case "---CARGO_BEGIN---":
                             initCargoFromLine(line);

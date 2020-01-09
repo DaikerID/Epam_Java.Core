@@ -1,17 +1,18 @@
 package com.Epam.JavaCore.hw11_25_12_19.application.serviceholder;
 
-import com.Epam.JavaCore.hw11_25_12_19.cargo.repo.impl.CargoArrayRepoImpl;
-import com.Epam.JavaCore.hw11_25_12_19.cargo.repo.impl.CargoCollectionRepoImpl;
-import com.Epam.JavaCore.hw11_25_12_19.cargo.service.CargoService;
-import com.Epam.JavaCore.hw11_25_12_19.cargo.service.CargoServiceImpl;
-import com.Epam.JavaCore.hw11_25_12_19.carrier.repo.impl.CarrierArrayRepoImpl;
-import com.Epam.JavaCore.hw11_25_12_19.carrier.repo.impl.CarrierCollectionRepoImpl;
-import com.Epam.JavaCore.hw11_25_12_19.carrier.service.CarrierService;
-import com.Epam.JavaCore.hw11_25_12_19.carrier.service.CarrierServiceImpl;
-import com.Epam.JavaCore.hw11_25_12_19.transportation.repo.impl.TransportationArrayRepoImpl;
-import com.Epam.JavaCore.hw11_25_12_19.transportation.repo.impl.TransportationCollectionRepoImpl;
-import com.Epam.JavaCore.hw11_25_12_19.transportation.service.TransportationService;
-import com.Epam.JavaCore.hw11_25_12_19.transportation.service.TransportationServiceImpl;
+import com.Epam.JavaCore.hw12_27_12_19.application.serviceholder.StorageType;
+import com.Epam.JavaCore.hw12_27_12_19.cargo.repo.impl.CargoArrayRepoImpl;
+import com.Epam.JavaCore.hw12_27_12_19.cargo.repo.impl.CargoCollectionRepoImpl;
+import com.Epam.JavaCore.hw12_27_12_19.cargo.service.CargoService;
+import com.Epam.JavaCore.hw12_27_12_19.cargo.service.CargoServiceImpl;
+import com.Epam.JavaCore.hw12_27_12_19.carrier.repo.impl.CarrierArrayRepoImpl;
+import com.Epam.JavaCore.hw12_27_12_19.carrier.repo.impl.CarrierCollectionRepoImpl;
+import com.Epam.JavaCore.hw12_27_12_19.carrier.service.CarrierService;
+import com.Epam.JavaCore.hw12_27_12_19.carrier.service.CarrierServiceImpl;
+import com.Epam.JavaCore.hw12_27_12_19.transportation.repo.impl.TransportationArrayRepoImpl;
+import com.Epam.JavaCore.hw12_27_12_19.transportation.repo.impl.TransportationCollectionRepoImpl;
+import com.Epam.JavaCore.hw12_27_12_19.transportation.service.TransportationService;
+import com.Epam.JavaCore.hw12_27_12_19.transportation.service.TransportationServiceImpl;
 
 public final class ServiceHolder {
 
@@ -21,14 +22,14 @@ public final class ServiceHolder {
     private final CargoService cargoService;
     private final TransportationService transportationService;
 
-    private ServiceHolder(StorageType storageType) {
+    private ServiceHolder(com.Epam.JavaCore.hw12_27_12_19.application.serviceholder.StorageType storageType) {
         SimpleServiceHolder initedServiceHolder = getInitedServiceHolder(storageType);
         cargoService = initedServiceHolder.cargoService;
         carrierService = initedServiceHolder.carrierService;
         transportationService = initedServiceHolder.transportationService;
     }
 
-    public static void initServiceHolder(StorageType storageType) {
+    public static void initServiceHolder(com.Epam.JavaCore.hw12_27_12_19.application.serviceholder.StorageType storageType) {
         ServiceHolder.instance = new ServiceHolder(storageType);
     }
 

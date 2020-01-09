@@ -1,18 +1,18 @@
 package com.Epam.JavaCore.hw11_25_12_19.cargo.repo.impl;
 
 
-import com.Epam.JavaCore.hw11_25_12_19.cargo.domain.Cargo;
-import com.Epam.JavaCore.hw11_25_12_19.cargo.domain.CargoField;
-import com.Epam.JavaCore.hw11_25_12_19.cargo.repo.CargoRepo;
-import com.Epam.JavaCore.hw11_25_12_19.cargo.search.CargoSearchCondition;
-import com.Epam.JavaCore.hw11_25_12_19.common.solutions.comparator.SimpleComparator;
+import com.Epam.JavaCore.hw12_27_12_19.cargo.domain.Cargo;
+import com.Epam.JavaCore.hw12_27_12_19.cargo.domain.CargoField;
+import com.Epam.JavaCore.hw12_27_12_19.cargo.repo.CargoRepo;
+import com.Epam.JavaCore.hw12_27_12_19.cargo.search.CargoSearchCondition;
+import com.Epam.JavaCore.hw12_27_12_19.common.solutions.comparator.SimpleComparator;
 
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-import static com.Epam.JavaCore.hw11_25_12_19.cargo.domain.CargoField.NAME;
-import static com.Epam.JavaCore.hw11_25_12_19.cargo.domain.CargoField.WEIGHT;
+import static com.Epam.JavaCore.hw12_27_12_19.cargo.domain.CargoField.NAME;
+import static com.Epam.JavaCore.hw12_27_12_19.cargo.domain.CargoField.WEIGHT;
 
 public abstract class CommonCargoRepo implements CargoRepo {
 

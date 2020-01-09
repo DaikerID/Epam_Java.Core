@@ -1,6 +1,6 @@
 package com.Epam.JavaCore.hw11_25_12_19.common.business.repo;
 
-import com.Epam.JavaCore.hw11_25_12_19.common.business.domain.BaseEntity;
+import com.Epam.JavaCore.hw12_27_12_19.common.business.domain.BaseEntity;
 
 public final class CommonRepoHelper {
 

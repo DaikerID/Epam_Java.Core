@@ -1,7 +1,7 @@
 package com.Epam.JavaCore.hw11_25_12_19.cargo.search;
 
-import com.Epam.JavaCore.hw11_25_12_19.cargo.domain.CargoField;
-import com.Epam.JavaCore.hw11_25_12_19.common.solutions.search.OrderType;
+import com.Epam.JavaCore.hw12_27_12_19.cargo.domain.CargoField;
+import com.Epam.JavaCore.hw12_27_12_19.common.solutions.search.OrderType;
 
 import java.util.Set;
 

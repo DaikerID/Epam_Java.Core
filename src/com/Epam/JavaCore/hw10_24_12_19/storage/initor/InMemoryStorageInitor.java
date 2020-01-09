@@ -15,7 +15,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-import static com.Epam.JavaCore.hw11_25_12_19.common.solutions.utils.CollectionUtils.isNotEmpty;
+import static com.Epam.JavaCore.hw12_27_12_19.common.solutions.utils.CollectionUtils.isNotEmpty;
 
 public class InMemoryStorageInitor implements StorageInitor {
 

@@ -1,0 +1,15 @@
+---CARGO_BEGIN---
+FOOD|Banana|5|25.12.2019|15
+CLOTHERS|T-short|1|M|cotton
+CLOTHERS|coat|2|M|leather
+---CARGO_END---
+---CARRIER_BEGIN---
+DHL|Saint-Petersburg, Nevski Avenue 5|PLANE
+UPS|Moscow, Leninsky Avenue 115|SHIP
+FedEx|Borovichi, 1st linia 3|CAR
+---CARRIER_END---
+---TRANSPORTATION_BEGIN---
+TRANSPORTATION 1|Ivan Ivanov|25.12.2019|4|1
+TRANSPORTATION 2|Peter Petrov|26.12.2019|5|2
+TRANSPORTATION 3|Alex Sidorov|26.12.2019|6|3
+---TRANSPORTATION_END---

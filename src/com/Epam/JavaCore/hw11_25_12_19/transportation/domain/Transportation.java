@@ -1,8 +1,8 @@
 package com.Epam.JavaCore.hw11_25_12_19.transportation.domain;
 
-import com.Epam.JavaCore.hw11_25_12_19.cargo.domain.Cargo;
-import com.Epam.JavaCore.hw11_25_12_19.carrier.domain.Carrier;
-import com.Epam.JavaCore.hw11_25_12_19.common.business.domain.BaseEntity;
+import com.Epam.JavaCore.hw12_27_12_19.cargo.domain.Cargo;
+import com.Epam.JavaCore.hw12_27_12_19.carrier.domain.Carrier;
+import com.Epam.JavaCore.hw12_27_12_19.common.business.domain.BaseEntity;
 
 import java.util.Date;
 

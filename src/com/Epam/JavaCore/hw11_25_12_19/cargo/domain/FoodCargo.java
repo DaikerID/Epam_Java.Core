@@ -1,5 +1,8 @@
 package com.Epam.JavaCore.hw11_25_12_19.cargo.domain;
 
+import com.Epam.JavaCore.hw12_27_12_19.cargo.domain.Cargo;
+import com.Epam.JavaCore.hw12_27_12_19.cargo.domain.CargoType;
+
 import java.util.Date;
 
 public class FoodCargo extends Cargo {
@@ -8,7 +11,7 @@ public class FoodCargo extends Cargo {
     private int storeTemperature;
 
     @Override
-    public CargoType getCargoType() {
+    public com.Epam.JavaCore.hw12_27_12_19.cargo.domain.CargoType getCargoType() {
         return CargoType.FOOD;
     }
 

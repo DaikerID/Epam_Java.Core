@@ -1,7 +1,8 @@
 package com.Epam.JavaCore.hw11_25_12_19.carrier.domain;
 
-import com.Epam.JavaCore.hw11_25_12_19.common.business.domain.BaseEntity;
-import com.Epam.JavaCore.hw11_25_12_19.transportation.domain.Transportation;
+import com.Epam.JavaCore.hw12_27_12_19.carrier.domain.CarrierType;
+import com.Epam.JavaCore.hw12_27_12_19.common.business.domain.BaseEntity;
+import com.Epam.JavaCore.hw12_27_12_19.transportation.domain.Transportation;
 
 import java.util.List;
 
