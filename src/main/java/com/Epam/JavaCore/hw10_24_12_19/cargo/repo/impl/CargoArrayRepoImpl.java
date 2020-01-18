@@ -140,7 +140,6 @@ public class CargoArrayRepoImpl extends CommonCargoRepo {
         cargos.sort(searchCondition.isAscOrdering() ? cargoComparator : cargoComparator.reversed());
       }
     }
-
     return cargos;
   }
 
