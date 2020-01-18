@@ -86,7 +86,6 @@ public class CargoServiceImpl implements CargoService {
         if (cargo != null) {
             return cargoRepo.update(cargo);
         }
-
         return false;
     }
 

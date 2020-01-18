@@ -6,7 +6,7 @@ import com.Epam.JavaCore.hw14_13_01_20.transportation.domain.Transportation;
 import java.io.Serializable;
 import java.util.List;
 
-public abstract class Cargo extends BaseEntity implements Serializable {
+public abstract class Cargo extends BaseEntity {
 
     protected String name;
     protected int weight;

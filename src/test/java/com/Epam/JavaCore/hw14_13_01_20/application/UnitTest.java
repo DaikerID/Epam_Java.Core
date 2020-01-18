@@ -77,6 +77,18 @@ public class UnitTest {
     }
 
     @Test
+    public void listClothersCargoSerialisationTest() throws Exception{
+        List<ClothersCargo> clothersCargoArrayList = new ArrayList<>();
+        Random random = new Random();
+        for (int i = 0; i < 10; i++){
+            clothersCargoArrayList.add(genClothersCargo(random));
+        }
+        serializeInFile(clothersCargoArrayList);
+        List<ClothersCargo> newClothersCargoArrayList = readSerializebleObjectFromFile();
+        Assertions.assertTrue(areCargosEquals(clothersCargoArrayList,newClothersCargoArrayList));
+    }
+
+    @Test
     public void listCarrierSerialisationTest() throws Exception {
         List<Carrier> carrierArrayList = new ArrayList<>();
         Random random = new Random();
