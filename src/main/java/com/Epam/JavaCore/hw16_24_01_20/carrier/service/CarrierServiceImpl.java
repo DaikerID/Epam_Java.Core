@@ -87,12 +87,12 @@ public class CarrierServiceImpl implements CarrierService {
 
     @Override
     public List<Carrier> filterBy(Predicate<Carrier> condition) {
-        return carrierRepo.filterByOneConition(condition);
+        return carrierRepo.filterByOneCondition(condition);
     }
 
     @Override
     public <U> List<Carrier> filterBy(U param, BiPredicate<Carrier, U> condition) {
-        return carrierRepo.filterByTwoConitions(param, condition);
+        return carrierRepo.filterByTwoConditions(param, condition);
     }
 
     @Override

@@ -85,12 +85,12 @@ public class CargoServiceImpl implements CargoService {
 
     @Override
     public List<Cargo> filterBy(Predicate<Cargo> condition) {
-        return cargoRepo.filterByOneConition(condition);
+        return cargoRepo.filterByOneCondition(condition);
     }
 
     @Override
     public <U> List<Cargo> filterBy(U param, BiPredicate<Cargo, U> condition) {
-        return cargoRepo.filterByTwoConitions(param,condition);
+        return cargoRepo.filterByTwoConditions(param,condition);
     }
 
     @Override

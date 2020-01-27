@@ -7,10 +7,7 @@ import com.Epam.JavaCore.hw16_24_01_20.common.solutions.utils.CollectionUtils;
 import com.Epam.JavaCore.hw16_24_01_20.storage.IdGenerator;
 
 import java.util.*;
-import java.util.function.BiPredicate;
-import java.util.function.Predicate;
 
-import static com.Epam.JavaCore.hw16_24_01_20.storage.Storage.cargoArray;
 import static com.Epam.JavaCore.hw16_24_01_20.storage.Storage.cargoCollection;
 
 
@@ -23,7 +20,7 @@ public class CargoCollectionRepoImpl extends CommonCargoRepo {
 
     @Override
     public Cargo[] findByName(String name) {
-        List<Cargo> result = filterByTwoConitions(name, (cargo, cargoName) -> cargo.getName().equals(cargoName));
+        List<Cargo> result = filterByTwoConditions(name, (cargo, cargoName) -> cargo.getName().equals(cargoName));
         return result.toArray(new Cargo[0]);
     }
 

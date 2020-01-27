@@ -31,12 +31,12 @@ public class TransportationServiceImpl implements TransportationService {
 
     @Override
     public List<Transportation> filterBy(Predicate<Transportation> condition) {
-        return transportationRepo.filterByOneConition(condition);
+        return transportationRepo.filterByOneCondition(condition);
     }
 
     @Override
     public <U> List<Transportation> filterBy(U param, BiPredicate<Transportation, U> condition) {
-        return transportationRepo.filterByTwoConitions(param, condition);
+        return transportationRepo.filterByTwoConditions(param, condition);
     }
 
     @Override

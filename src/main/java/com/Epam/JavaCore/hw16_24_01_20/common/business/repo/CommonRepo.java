@@ -19,7 +19,7 @@ public interface CommonRepo<TYPE, ID> {
 
     int countAll();
 
-    default List<TYPE> filterByOneConition(Predicate<TYPE> condition) {
+    default List<TYPE> filterByOneCondition(Predicate<TYPE> condition) {
         List<TYPE> data = getAll();
         List<TYPE> result = new ArrayList<>();
         for (TYPE type : data) {
@@ -30,7 +30,7 @@ public interface CommonRepo<TYPE, ID> {
         return result;
     }
 
-    default <U> List<TYPE> filterByTwoConitions(U param, BiPredicate<TYPE, U> condition) {
+    default <U> List<TYPE> filterByTwoConditions(U param, BiPredicate<TYPE, U> condition) {
         List<TYPE> data = getAll();
         List<TYPE> result = new ArrayList<>();
         for (TYPE type : data) {
