@@ -8,6 +8,8 @@ import com.Epam.JavaCore.hw16_24_01_20.transportation.domain.Transportation;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
 
 public class CarrierServiceImpl implements CarrierService {
 
@@ -81,6 +83,16 @@ public class CarrierServiceImpl implements CarrierService {
         for (Carrier carrier : carriers) {
             System.out.println(carrier);
         }
+    }
+
+    @Override
+    public List<Carrier> filterBy(Predicate<Carrier> condition) {
+        return carrierRepo.filterByOneConition(condition);
+    }
+
+    @Override
+    public <U> List<Carrier> filterBy(U param, BiPredicate<Carrier, U> condition) {
+        return carrierRepo.filterByTwoConitions(param, condition);
     }
 
     @Override

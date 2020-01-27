@@ -4,6 +4,8 @@ import com.Epam.JavaCore.hw16_24_01_20.transportation.domain.Transportation;
 import com.Epam.JavaCore.hw16_24_01_20.transportation.repo.TransportationRepo;
 
 import java.util.List;
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
 
 public class TransportationServiceImpl implements TransportationService {
 
@@ -25,6 +27,16 @@ public class TransportationServiceImpl implements TransportationService {
         for (Transportation transportation : allTransportations) {
             System.out.println(transportation);
         }
+    }
+
+    @Override
+    public List<Transportation> filterBy(Predicate<Transportation> condition) {
+        return transportationRepo.filterByOneConition(condition);
+    }
+
+    @Override
+    public <U> List<Transportation> filterBy(U param, BiPredicate<Transportation, U> condition) {
+        return transportationRepo.filterByTwoConitions(param, condition);
     }
 
     @Override

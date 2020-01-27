@@ -9,6 +9,8 @@ import com.Epam.JavaCore.hw16_24_01_20.transportation.domain.Transportation;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
 
 public class CargoServiceImpl implements CargoService {
 
@@ -79,6 +81,16 @@ public class CargoServiceImpl implements CargoService {
         for (Cargo cargo : allCargos) {
             System.out.println(cargo);
         }
+    }
+
+    @Override
+    public List<Cargo> filterBy(Predicate<Cargo> condition) {
+        return cargoRepo.filterByOneConition(condition);
+    }
+
+    @Override
+    public <U> List<Cargo> filterBy(U param, BiPredicate<Cargo, U> condition) {
+        return cargoRepo.filterByTwoConitions(param,condition);
     }
 
     @Override
