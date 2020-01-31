@@ -30,7 +30,7 @@ import static com.Epam.JavaCore.hw18_29_01_20.common.solutions.utils.xml.dom.Xml
 
 public class XmlDomFileDataInitor extends BaseFileInitor {
 
-  private static final String FILE = "resourses/com/Epam/JavaCore/lesson_12_io_nio/initdata/xmldata.xml";
+  private static final String FILE = "/com/Epam/JavaCore/lesson_12_io_nio/initdata/xmldata.xml";
 
   @Override
   public void initStorage() throws InitStorageException {

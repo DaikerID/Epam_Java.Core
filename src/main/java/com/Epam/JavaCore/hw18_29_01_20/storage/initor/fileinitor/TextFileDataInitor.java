@@ -25,7 +25,7 @@ import java.util.Map;
 
 public class TextFileDataInitor extends BaseFileInitor {
 
-  private static final String FILE = "resourses/com/Epam/JavaCore/lesson_12_io_nio/initdata/textdata.txt";
+  private static final String FILE = "/com/Epam/JavaCore/lesson_12_io_nio/initdata/textdata.txt";
   private static final String CARGO_SECTION_LABEL_IN_FILE = "--Cargo section--";
   private static final String CARRIER_SECTION_LABEL_IN_FILE = "--Carrier section--";
   private static final String TRANSPORTATION_SECTION_LABEL_IN_FILE = "--Transportation section--";

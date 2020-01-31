@@ -24,7 +24,7 @@ public class EnityUtill {
         FoodCargo foodCargo = new FoodCargo();
         foodCargo.setName(String.valueOf(random.nextInt()));
         foodCargo.setWeight(random.nextInt());
-        foodCargo.setExpirationDate(ZonedDateTime.of(LocalDateTime.now(), ZoneId.of("Europe/Moscow")));
+        foodCargo.setExpirationDate(ZonedDateTime.of(LocalDateTime.now(), ZonedDateTime.now().getZone()));
         foodCargo.setStoreTemperature(random.nextInt());
         return foodCargo;
     }

@@ -18,6 +18,7 @@ import com.Epam.JavaCore.hw18_29_01_20.storage.initor.InitStorageType;
 import com.Epam.JavaCore.hw18_29_01_20.storage.initor.StorageInitor;
 import com.Epam.JavaCore.hw18_29_01_20.transportation.service.TransportationService;
 
+import java.time.ZonedDateTime;
 import java.util.*;
 
 import static com.Epam.JavaCore.hw18_29_01_20.cargo.domain.CargoField.NAME;
@@ -42,7 +43,7 @@ public class Application {
             transportationService = ServiceHolder.getInstance().getTransportationService();
 
 
-            StorageInitor storageInitor = getStorageInitor(InitStorageType.TEXT_FILE);
+            StorageInitor storageInitor = getStorageInitor(InitStorageType.XML_SAX_PARSER_FILE);
             storageInitor.initStorage();
 
             printStorageData();

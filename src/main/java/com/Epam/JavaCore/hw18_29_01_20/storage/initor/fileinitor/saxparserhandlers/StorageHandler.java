@@ -195,7 +195,6 @@ public class StorageHandler extends DefaultHandler {
     }
 
     private ZonedDateTime parseDate(String data) throws ParseException {
-
         return ZonedDateTime.of(LocalDate.parse(data, DateTimeFormatter.ofPattern("dd.MM.yyyy")),
                 LocalTime.now(),
                 ZoneId.of("Europe/Moscow"));
