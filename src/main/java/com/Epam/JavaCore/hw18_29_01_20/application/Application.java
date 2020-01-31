@@ -1,30 +1,30 @@
-package com.Epam.JavaCore.hw17_27_01_20.application;
+package com.Epam.JavaCore.hw18_29_01_20.application;
 
 
-import com.Epam.JavaCore.hw17_27_01_20.application.serviceholder.ServiceHolder;
-import com.Epam.JavaCore.hw17_27_01_20.application.serviceholder.StorageType;
-import com.Epam.JavaCore.hw17_27_01_20.cargo.domain.Cargo;
-import com.Epam.JavaCore.hw17_27_01_20.cargo.domain.CargoField;
-import com.Epam.JavaCore.hw17_27_01_20.cargo.search.CargoSearchCondition;
-import com.Epam.JavaCore.hw17_27_01_20.cargo.service.CargoService;
-import com.Epam.JavaCore.hw17_27_01_20.carrier.service.CarrierService;
-import com.Epam.JavaCore.hw17_27_01_20.common.business.exception.checked.InitStorageException;
-import com.Epam.JavaCore.hw17_27_01_20.common.business.exception.checked.ReportException;
-import com.Epam.JavaCore.hw17_27_01_20.common.solutions.search.OrderType;
-import com.Epam.JavaCore.hw17_27_01_20.common.solutions.utils.CollectionUtils;
-import com.Epam.JavaCore.hw17_27_01_20.reporting.ReportDefaultService;
-import com.Epam.JavaCore.hw17_27_01_20.reporting.ReportService;
-import com.Epam.JavaCore.hw17_27_01_20.storage.initor.InitStorageType;
-import com.Epam.JavaCore.hw17_27_01_20.storage.initor.StorageInitor;
-import com.Epam.JavaCore.hw17_27_01_20.transportation.service.TransportationService;
+import com.Epam.JavaCore.hw18_29_01_20.application.serviceholder.ServiceHolder;
+import com.Epam.JavaCore.hw18_29_01_20.application.serviceholder.StorageType;
+import com.Epam.JavaCore.hw18_29_01_20.cargo.domain.Cargo;
+import com.Epam.JavaCore.hw18_29_01_20.cargo.domain.CargoField;
+import com.Epam.JavaCore.hw18_29_01_20.cargo.search.CargoSearchCondition;
+import com.Epam.JavaCore.hw18_29_01_20.cargo.service.CargoService;
+import com.Epam.JavaCore.hw18_29_01_20.carrier.service.CarrierService;
+import com.Epam.JavaCore.hw18_29_01_20.common.business.exception.checked.InitStorageException;
+import com.Epam.JavaCore.hw18_29_01_20.common.business.exception.checked.ReportException;
+import com.Epam.JavaCore.hw18_29_01_20.common.solutions.search.OrderType;
+import com.Epam.JavaCore.hw18_29_01_20.common.solutions.utils.CollectionUtils;
+import com.Epam.JavaCore.hw18_29_01_20.reporting.ReportDefaultService;
+import com.Epam.JavaCore.hw18_29_01_20.reporting.ReportService;
+import com.Epam.JavaCore.hw18_29_01_20.storage.initor.InitStorageType;
+import com.Epam.JavaCore.hw18_29_01_20.storage.initor.StorageInitor;
+import com.Epam.JavaCore.hw18_29_01_20.transportation.service.TransportationService;
 
 import java.util.*;
 
-import static com.Epam.JavaCore.hw17_27_01_20.cargo.domain.CargoField.NAME;
-import static com.Epam.JavaCore.hw17_27_01_20.cargo.domain.CargoField.WEIGHT;
-import static com.Epam.JavaCore.hw17_27_01_20.common.solutions.search.OrderType.ASC;
-import static com.Epam.JavaCore.hw17_27_01_20.common.solutions.search.OrderType.DESC;
-import static com.Epam.JavaCore.hw17_27_01_20.storage.initor.StorageInitorFactory.getStorageInitor;
+import static com.Epam.JavaCore.hw18_29_01_20.cargo.domain.CargoField.NAME;
+import static com.Epam.JavaCore.hw18_29_01_20.cargo.domain.CargoField.WEIGHT;
+import static com.Epam.JavaCore.hw18_29_01_20.common.solutions.search.OrderType.ASC;
+import static com.Epam.JavaCore.hw18_29_01_20.common.solutions.search.OrderType.DESC;
+import static com.Epam.JavaCore.hw18_29_01_20.storage.initor.StorageInitorFactory.getStorageInitor;
 import static java.util.Collections.singletonList;
 
 public class Application {
@@ -42,7 +42,7 @@ public class Application {
             transportationService = ServiceHolder.getInstance().getTransportationService();
 
 
-            StorageInitor storageInitor = getStorageInitor(InitStorageType.XML_SAX_PARSER_FILE);
+            StorageInitor storageInitor = getStorageInitor(InitStorageType.TEXT_FILE);
             storageInitor.initStorage();
 
             printStorageData();
