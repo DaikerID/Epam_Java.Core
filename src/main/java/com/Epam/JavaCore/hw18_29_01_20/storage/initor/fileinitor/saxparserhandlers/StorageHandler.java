@@ -12,11 +12,9 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class StorageHandler extends DefaultHandler {
@@ -88,24 +86,20 @@ public class StorageHandler extends DefaultHandler {
             }
 
             case "weight": {
-                currCargo.setWeight(Integer.valueOf(data));
+                currCargo.setWeight(Integer.parseInt(data));
                 break;
             }
 
             case "expirationDate": {
                 if (FoodCargo.class.equals(currCargo.getClass())) {
-                    try {
-                        ((FoodCargo) currCargo).setExpirationDate(parseDate(data));
-                    } catch (ParseException e) {
-                        e.printStackTrace();
-                    }
+                    ((FoodCargo) currCargo).setExpirationDate(parseDate(data));
                 }
                 break;
             }
 
             case "storeTemperature": {
                 if (FoodCargo.class.equals(currCargo.getClass())) {
-                    ((FoodCargo) currCargo).setStoreTemperature(Integer.valueOf(data));
+                    ((FoodCargo) currCargo).setStoreTemperature(Integer.parseInt(data));
                 }
                 break;
             }
@@ -165,11 +159,7 @@ public class StorageHandler extends DefaultHandler {
             }
 
             case "transportationBeginDate": {
-                try {
-                    currTransportation.setTransportationBeginDate(parseDate(data));
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
+                currTransportation.setTransportationBeginDate(parseDate(data));
                 break;
             }
 
@@ -194,10 +184,10 @@ public class StorageHandler extends DefaultHandler {
         stringBuilder.append(data);
     }
 
-    private ZonedDateTime parseDate(String data) throws ParseException {
+    private ZonedDateTime parseDate(String data) {
         return ZonedDateTime.of(LocalDate.parse(data, DateTimeFormatter.ofPattern("dd.MM.yyyy")),
                 LocalTime.now(),
-                ZoneId.of("Europe/Moscow"));
+                ZonedDateTime.now().getZone());
     }
 
     public Map<String, Cargo> getCargoMap() {

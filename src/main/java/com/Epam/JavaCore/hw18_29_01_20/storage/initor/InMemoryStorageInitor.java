@@ -12,7 +12,6 @@ import com.Epam.JavaCore.hw18_29_01_20.transportation.domain.Transportation;
 import com.Epam.JavaCore.hw18_29_01_20.transportation.service.TransportationService;
 
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -61,7 +60,7 @@ public class InMemoryStorageInitor implements StorageInitor {
 
   private FoodCargo createFoodCargo(int index) {
     FoodCargo cargo = new FoodCargo();
-    cargo.setExpirationDate(ZonedDateTime.of(LocalDateTime.now(), ZoneId.of("Europe/Moscow")));
+    cargo.setExpirationDate(ZonedDateTime.of(LocalDateTime.now(), ZonedDateTime.now().getZone()));
     cargo.setStoreTemperature(index);
     cargo.setWeight(ThreadLocalRandom.current().nextInt(1, 100 + 1));
     cargo.setName("Milk");

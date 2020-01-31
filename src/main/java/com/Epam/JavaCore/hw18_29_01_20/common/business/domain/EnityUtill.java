@@ -50,7 +50,7 @@ public class EnityUtill {
         Transportation transportation = new Transportation();
         transportation.setDescription(String.valueOf(random.nextInt()));
         transportation.setBillTo(String.valueOf(random.nextInt()));
-        transportation.setTransportationBeginDate(ZonedDateTime.of(LocalDateTime.now(), ZoneId.of("Europe/Moscow")));
+        transportation.setTransportationBeginDate(ZonedDateTime.of(LocalDateTime.now(), ZonedDateTime.now().getZone()));
         return transportation;
     }
 
