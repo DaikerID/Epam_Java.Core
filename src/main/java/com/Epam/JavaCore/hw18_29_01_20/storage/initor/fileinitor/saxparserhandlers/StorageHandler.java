@@ -6,12 +6,14 @@ import com.Epam.JavaCore.hw18_29_01_20.cargo.domain.ClothersCargo;
 import com.Epam.JavaCore.hw18_29_01_20.cargo.domain.FoodCargo;
 import com.Epam.JavaCore.hw18_29_01_20.carrier.domain.Carrier;
 import com.Epam.JavaCore.hw18_29_01_20.carrier.domain.CarrierType;
+import com.Epam.JavaCore.hw18_29_01_20.common.solutions.utils.JavaUtilDateUtils;
 import com.Epam.JavaCore.hw18_29_01_20.storage.initor.fileinitor.BaseFileInitor;
 import com.Epam.JavaCore.hw18_29_01_20.transportation.domain.Transportation;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import java.text.ParseException;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatter;
@@ -92,7 +94,7 @@ public class StorageHandler extends DefaultHandler {
 
             case "expirationDate": {
                 if (FoodCargo.class.equals(currCargo.getClass())) {
-                    ((FoodCargo) currCargo).setExpirationDate(parseDate(data));
+                    ((FoodCargo) currCargo).setExpirationDate(JavaUtilDateUtils.valueOf(data));
                 }
                 break;
             }
@@ -159,7 +161,7 @@ public class StorageHandler extends DefaultHandler {
             }
 
             case "transportationBeginDate": {
-                currTransportation.setTransportationBeginDate(parseDate(data));
+                currTransportation.setTransportationBeginDate(JavaUtilDateUtils.valueOf(data));
                 break;
             }
 
@@ -182,12 +184,6 @@ public class StorageHandler extends DefaultHandler {
     public void characters(char[] ch, int start, int length) throws SAXException {
         String data = new String(ch, start, length);
         stringBuilder.append(data);
-    }
-
-    private ZonedDateTime parseDate(String data) {
-        return ZonedDateTime.of(LocalDate.parse(data, DateTimeFormatter.ofPattern("dd.MM.yyyy")),
-                LocalTime.now(),
-                ZoneId.systemDefault());
     }
 
     public Map<String, Cargo> getCargoMap() {

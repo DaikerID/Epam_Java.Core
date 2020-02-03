@@ -9,22 +9,22 @@ import java.time.format.DateTimeFormatter;
 
 public final class JavaUtilDateUtils {
 
-  private static final String PATTERN = "dd.MM.yyyy";
+    private static final String PATTERN = "dd.MM.yyyy";
 
-  private JavaUtilDateUtils(){
+    private JavaUtilDateUtils() {
 
-  }
+    }
 
-  public static ZonedDateTime valueOf(String dateStr, String pattern) throws ParseException {
-    return ZonedDateTime.of(LocalDate.parse(dateStr, DateTimeFormatter.ofPattern(pattern)),
-            LocalTime.now(),
-            ZoneId.systemDefault());
-  }
+    public static ZonedDateTime valueOf(String dateStr, String pattern) {
+        return ZonedDateTime.of(LocalDate.parse(dateStr, DateTimeFormatter.ofPattern(pattern)),
+                LocalTime.now(),
+                ZoneId.systemDefault());
+    }
 
-  public static ZonedDateTime valueOf(String dateStr) throws ParseException {
-    return ZonedDateTime.of(LocalDate.parse(dateStr, DateTimeFormatter.ofPattern(PATTERN)),
-            LocalTime.now(),
-            ZoneId.systemDefault());
-  }
+    public static ZonedDateTime valueOf(String dateStr) {
+        return ZonedDateTime.of(LocalDate.parse(dateStr, DateTimeFormatter.ofPattern(PATTERN)),
+                LocalTime.now(),
+                ZoneId.systemDefault());
+    }
 
 }
