@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/hw.epam_java.core.iml" filepath="$PROJECT_DIR$/hw.epam_java.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Epam_Java.Core.iml" filepath="$PROJECT_DIR$/Epam_Java.Core.iml" />
     </modules>
   </component>
 </project>

@@ -10,13 +10,8 @@ import com.Epam.JavaCore.hw18_29_01_20.common.solutions.utils.JavaUtilDateUtils;
 import com.Epam.JavaCore.hw18_29_01_20.storage.initor.fileinitor.BaseFileInitor;
 import com.Epam.JavaCore.hw18_29_01_20.transportation.domain.Transportation;
 import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import java.text.ParseException;
-import java.time.*;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class StorageHandler extends DefaultHandler {
@@ -35,7 +30,7 @@ public class StorageHandler extends DefaultHandler {
     private StringBuilder stringBuilder = new StringBuilder();
 
     @Override
-    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+    public void startElement(String uri, String localName, String qName, Attributes attributes) {
         stringBuilder.setLength(0);
         switch (qName) {
             case "cargo": {
@@ -68,7 +63,7 @@ public class StorageHandler extends DefaultHandler {
     }
 
     @Override
-    public void endElement(String uri, String localName, String qName) throws SAXException {
+    public void endElement(String uri, String localName, String qName) {
         String data = stringBuilder.toString();
 
         if (currCargo != null) {
@@ -181,7 +176,7 @@ public class StorageHandler extends DefaultHandler {
     }
 
     @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
+    public void characters(char[] ch, int start, int length) {
         String data = new String(ch, start, length);
         stringBuilder.append(data);
     }
