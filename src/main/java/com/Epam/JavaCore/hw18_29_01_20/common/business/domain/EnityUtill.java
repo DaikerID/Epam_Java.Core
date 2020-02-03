@@ -24,7 +24,7 @@ public class EnityUtill {
         FoodCargo foodCargo = new FoodCargo();
         foodCargo.setName(String.valueOf(random.nextInt()));
         foodCargo.setWeight(random.nextInt());
-        foodCargo.setExpirationDate(ZonedDateTime.of(LocalDateTime.now(), ZonedDateTime.now().getZone()));
+        foodCargo.setExpirationDate(ZonedDateTime.of(LocalDateTime.now(), ZoneId.systemDefault()));
         foodCargo.setStoreTemperature(random.nextInt());
         return foodCargo;
     }
@@ -50,7 +50,7 @@ public class EnityUtill {
         Transportation transportation = new Transportation();
         transportation.setDescription(String.valueOf(random.nextInt()));
         transportation.setBillTo(String.valueOf(random.nextInt()));
-        transportation.setTransportationBeginDate(ZonedDateTime.of(LocalDateTime.now(), ZonedDateTime.now().getZone()));
+        transportation.setTransportationBeginDate(ZonedDateTime.of(LocalDateTime.now(), ZoneId.systemDefault()));
         return transportation;
     }
 
@@ -149,8 +149,8 @@ public class EnityUtill {
             return STRING_COMPARATOR.compare(transportation1.getDescription(), transportation2.getDescription()) == 0
                     && LONG_COMPARATOR.compare(transportation1.getId(), transportation1.getId()) == 0
                     && STRING_COMPARATOR.compare(transportation1.getBillTo(), transportation2.getBillTo()) == 0
-                    && areCargosEquals(transportation1.getCargo(),transportation2.getCargo())
-                    && areCarriersEquals(transportation1.getCarrier(),transportation2.getCarrier());
+                    && areCargosEquals(transportation1.getCargo(), transportation2.getCargo())
+                    && areCarriersEquals(transportation1.getCarrier(), transportation2.getCarrier());
         }
     }
 

@@ -114,7 +114,7 @@ public class CargoArrayRepoImpl extends CommonCargoRepo {
   @Override
   public List<Cargo> getAll() {
     List<Cargo> cargos = Arrays.asList(cargoArray);
-    var iter = cargos.iterator();
+    Iterator<Cargo> iter = cargos.iterator();
 
     while (iter.hasNext()) {
       if (iter.next() == null) {

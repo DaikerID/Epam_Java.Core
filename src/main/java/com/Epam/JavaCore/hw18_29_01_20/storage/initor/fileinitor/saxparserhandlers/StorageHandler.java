@@ -187,7 +187,7 @@ public class StorageHandler extends DefaultHandler {
     private ZonedDateTime parseDate(String data) {
         return ZonedDateTime.of(LocalDate.parse(data, DateTimeFormatter.ofPattern("dd.MM.yyyy")),
                 LocalTime.now(),
-                ZonedDateTime.now().getZone());
+                ZoneId.systemDefault());
     }
 
     public Map<String, Cargo> getCargoMap() {
