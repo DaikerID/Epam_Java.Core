@@ -72,12 +72,12 @@ public class CargoSQLRepoImlp implements CargoRepo {
     @Override
     public boolean update(Cargo entity) {
         int affectedRows = executeUpdate(
-                "UPDATE CARGO ID = ?, NAME = ? , WEIGHT = ?, ENTITY_TYPE = ?, " +
+                "UPDATE CARGO NAME = ? , WEIGHT = ?, ENTITY_TYPE = ?, " +
                         "CLOTHERS_SIZE = ?, CLOTHERS_MATERIAL = ?, FOOD_EXPIRATION_DATE = ?, " +
                         "FOOD_STORE_TEMPERATURE = ?) VALUES (?,?,?,?,?,?,?,?) WHERE ID =?",
                 ps -> {
                     int i = 0;
-                    ps.setLong(++i, entity.getId());
+
                     ps.setString(++i, entity.getName());
                     ps.setInt(++i, entity.getWeight());
                     ps.setString(++i, String.valueOf(entity.getCargoType()));
@@ -93,6 +93,7 @@ public class CargoSQLRepoImlp implements CargoRepo {
                             ps.setString(++i, foodCargo.getExpirationDate().toString());
                             ps.setInt(++i, foodCargo.getStoreTemperature());
                     }
+                    ps.setLong(++i, entity.getId());
                 }
         );
         return affectedRows == 1;
